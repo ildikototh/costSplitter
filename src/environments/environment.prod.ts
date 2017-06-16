@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  appBaseUri: 'http://localhost:4200' //should be replace with Firebase URL.
 };
