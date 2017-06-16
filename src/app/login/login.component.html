@@ -1,8 +1,17 @@
-<div class="form-container">
-  <span class="error" *ngIf="error">{{ error }}</span>
+<div class="container">
+  <div class="row flex-login">
+    <form class="form-signin">
+      <div class="col-lg-12">
+      <h2 class="form-signin-heading">Please sign in</h2>
+        <span class="error" *ngIf="error">{{ error }}</span>
+          <button class="btn btn-lg btn-primary btn-block" (click)="loginGithub()" id="fb">Login With Github
+          </button>
+          <button routerLink="/login-email" id="email" >Email</button>
 
-  <button (click)="loginGithub()" id="github">Login With Github</button><br>
-  <button routerLink="/login-email" id="email">Email</button>
+          <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </div>
 
-  <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+    </form>
+  </div>
 </div>
