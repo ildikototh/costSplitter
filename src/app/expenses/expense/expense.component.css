@@ -1,9 +1,3 @@
-li {
-  list-style-type: none;
-}
-
-li::nth-child(odd) {
-  background: #FFF; }
-li::nth-child(even) {
-  background: rgb(0,0,0);
+.product-list:hover {
+  background: #e4e4e4;
 }

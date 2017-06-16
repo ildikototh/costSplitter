@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, Input, OnInit, Output} from "@angular/core";
 import {Expense} from "../../shared/models/expense";
 
 @Component({
@@ -8,11 +8,24 @@ import {Expense} from "../../shared/models/expense";
 })
 export class ExpensesListComponent implements OnInit {
 
-  @Input() expenses: Expense[];
+  public totalPayable = 0;
+  private selectedItem = { 'price': 0 };
 
+  @Input() expenses: Expense[];
+  @Input() itemPrice: number;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  itemSelected() {
+    console.log(this.itemPrice);
+    this.calculateTotal();
+  }
+
+  calculateTotal() {
+    this.selectedItem.price = this.itemPrice;
+    this.totalPayable  += this.selectedItem.price;
   }
 
 }

@@ -1,9 +1,13 @@
-<div class="container">
+<div class="container" >
   <div *ngIf="expenses" class=" row expenses-list">
-    <ul>
-      <app-expense *ngFor="let expense of expenses" [expense]="expense">
+      <app-expense *ngFor="let expense of expenses" [expense]="expense" (itemPrice)='itemSelected($event)'>
       </app-expense>
-    </ul>
+
+    <div>
+      Total payable  <span>{{totalPayable}}</span>
+    </div>
   </div>
   <div *ngIf="!expenses">No item on expenses</div>
+
+
 </div>

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Expense} from '../shared/models/expense'
 
-import {AngularFireDatabase} from 'angularfire2/database';
 import {ExpenseService} from '../shared/services/expense.service';
 
 @Component({
@@ -12,7 +11,7 @@ import {ExpenseService} from '../shared/services/expense.service';
 export class ExpensesComponent implements OnInit {
 
   public expenses: any;
-  public showAddExpense = false;
+
   expense: Expense = new Expense('', 0, '', '');
 
   constructor(private expenseService: ExpenseService,) {
@@ -33,12 +32,15 @@ export class ExpensesComponent implements OnInit {
   }
 
   addExpense() {
-
-    if (this.expense.product === '' || !this.expense.price) {
+    if (this.expense.product === '') {
       return;
     }
-    console.log(this.expense);
     this.expenseService.addExpense(this.expense);
+    this.setDefaultValues();
+  }
+
+  setDefaultValues() {
     this.expense.product = '';
+    this.expense.price = 0;
   }
 }

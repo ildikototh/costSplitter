@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {Expense} from "../../shared/models/expense";
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {Expense} from '../../shared/models/expense';
 
 
 @Component({
@@ -9,8 +9,9 @@ import {Expense} from "../../shared/models/expense";
 })
 export class ExpenseComponent implements OnInit {
 
-  private isAssigned : boolean = false;
+  private isAssigned = false;
   @Input() expense: Expense;
+  @Output() itemPrice: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {
   }
@@ -21,7 +22,7 @@ export class ExpenseComponent implements OnInit {
   toggleAssignToMe() {
     this.isAssigned = !this.isAssigned;
     if (this.isAssigned) {
-
+      this.itemPrice.emit(this.expense.price);
     }
   }
 
