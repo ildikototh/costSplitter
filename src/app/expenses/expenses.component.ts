@@ -20,7 +20,7 @@ export class ExpensesComponent implements OnInit {
   }
 
   getExpensesByName(name) {
-    return this.expenses.filter(expense => expense.product_name );
+    return this.expenses.filter(expense => expense.product_name = name );
   }
 
   }
