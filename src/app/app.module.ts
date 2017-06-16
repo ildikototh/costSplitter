@@ -39,7 +39,7 @@ import { routes } from './app.route';
     AngularFireDatabaseModule,
     routes
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
