@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {Expense} from "../../shared/model/expense";
+import {Expense} from "../../shared/models/expense";
 
 @Component({
   selector: 'app-expenses-list',
