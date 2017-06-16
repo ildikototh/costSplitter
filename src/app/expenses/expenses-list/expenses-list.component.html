@@ -1,19 +1,9 @@
 <div class="container">
-  <div *ngIf="expenses" class="expenses-list">
-    <table class="table">
-      <thead>
-      <tr>
-        <th>Product name</th>
-        <th>Price</th>
-        <th>Group id</th>
-        <th>User id</th>
-      </tr>
-      </thead>
-      <tbody>
+  <div *ngIf="expenses" class=" row expenses-list">
+    <ul>
       <app-expense *ngFor="let expense of expenses" [expense]="expense">
       </app-expense>
-      </tbody>
-    </table>
+    </ul>
   </div>
   <div *ngIf="!expenses">No item on expenses</div>
 </div>
