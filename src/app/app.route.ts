@@ -17,8 +17,7 @@ export const router: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login-email', component: EmailComponent },
-  { path: 'members', component: MemberComponent, canActivate: [AuthService] }
-  { path: 'members', component: MemberComponent},
+  { path: 'members', component: MemberComponent, canActivate: [AuthService] },
   { path: 'home', component: HomeComponent},
   { path: 'expenses', loadChildren: './expenses/expenses.module.ts#ExpensesModule' },
   { path: '**', component: NotfoundComponent}
