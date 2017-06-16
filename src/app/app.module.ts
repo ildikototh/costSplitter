@@ -6,12 +6,14 @@ import {FormsModule} from "@angular/forms";
 import {ExpensesModule} from "./expenses/expenses.module";
 import {AppRoutingModule} from "./app-routing.module";
 import { HomeComponent } from './home/home.component';
+import {NotfoundComponent} from "./notfound/notfound.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
