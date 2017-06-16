@@ -15,24 +15,19 @@ export class ExpensesComponent implements OnInit {
   public expenses: any;
   expense: Expense = new Expense('Random', 5.4);
 
-  constructor(public af: AngularFireAuth, public afDB: AngularFireDatabase, private router: Router) {
-
-    this.af.authState.subscribe(auth => {
-      if (auth) {
-        this.router.navigateByUrl('/expenses');
-      }
-    });
+  constructor( public afDB: AngularFireDatabase, private router: Router) {
   }
 
   ngOnInit() {
     this.expenses = this.afDB.list('/product');
   }
 
-  getExpensesByGroup(group_id) {
+  getExpensesByGroup(group) {
+    this.expenses.subscribe(expenses => expenses.indexOf(group) !== -1);
   }
 
-  getExpensesByName(name) {
-    this.expenses.subscribe(expenses => expenses.indexOf(name) !== -1);
+  getExpensesByName(product) {
+    this.expenses.subscribe(expenses => expenses.indexOf(product) !== -1);
   }
 
 }
