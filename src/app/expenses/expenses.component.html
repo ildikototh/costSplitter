@@ -1,0 +1,6 @@
+<div class="expenses-list">
+  <div class="container container-fluid">
+    <app-expenses-form (formSubmitted)="getExpensesByName($event)"></app-expenses-form>
+    <app-expenses-list [expenses]="expenses" ></app-expenses-list>
+  </div>
+</div>
