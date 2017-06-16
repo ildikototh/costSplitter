@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Expenses} from "../../shared/model/expenses";
+import {Expense} from "../../shared/model/expense";
 
 
 @Component({
@@ -9,7 +9,7 @@ import {Expenses} from "../../shared/model/expenses";
 })
 export class ExpenseComponent implements OnInit {
 
-  @Input() expense: Expenses;
+  @Input() expense: Expense;
 
   constructor() {
   }

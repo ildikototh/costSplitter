@@ -1,3 +1,19 @@
-<p>
-  expenses-list works!
-</p>
+<div class="container">
+  <div *ngIf="expenses" class="expenses-list">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Product name</th>
+        <th>Price</th>
+        <th>Group id</th>
+        <th>User id</th>
+      </tr>
+      </thead>
+      <tbody>
+      <app-expense *ngFor="let expense of expenses" [expense]="expense">
+      </app-expense>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!expenses">No item on expenses</div>
+</div>
