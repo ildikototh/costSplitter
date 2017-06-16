@@ -7,3 +7,13 @@ export const environment = {
   production: false,
   appBaseUri: 'http://localhost:4200'
 };
+
+//This is the credential configuration of firebase. Please do NOT SHARE THIS INFORMATION!
+export const firebaseConfig = {
+    apiKey:  'AIzaSyDQegDzbL6wpVPI0nvAlXme8py5Y2lERUs',
+    authDomain:  'wukist-b30ed.firebaseapp.com',
+    databaseURL:  'https://wukist-b30ed.firebaseio.com',
+    projectId:  'wukist-b30ed',
+    storageBucket:  'wukist-b30ed.appspot.com',
+    messagingSenderId:  '241138746750'
+}
