@@ -9,7 +9,7 @@ import {Expense} from '../../shared/models/expense';
 })
 export class ExpenseComponent implements OnInit {
 
-  private isAssigned = false;
+  public isAssigned = false;
   @Input() expense: Expense;
   @Output() itemPrice: EventEmitter<number> = new EventEmitter<number>();
 
@@ -23,6 +23,8 @@ export class ExpenseComponent implements OnInit {
     this.isAssigned = !this.isAssigned;
     if (this.isAssigned) {
       this.itemPrice.emit(this.expense.price);
+    } else {
+      this.itemPrice.emit(-Math.abs(this.expense.price));
     }
   }
 

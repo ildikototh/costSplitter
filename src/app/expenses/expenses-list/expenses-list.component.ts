@@ -18,8 +18,8 @@ export class ExpensesListComponent implements OnInit {
   ngOnInit() {
   }
 
-  itemSelected() {
-    console.log(this.itemPrice);
+  itemSelected(price) {
+    this.itemPrice = price;
     this.calculateTotal();
   }
 

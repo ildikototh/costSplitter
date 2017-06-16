@@ -24,11 +24,11 @@ export class ExpensesComponent implements OnInit {
   }
 
   getExpensesByGroup(group) {
-    this.expenseService.getExpenses().subscribe(expenses => expenses.indexOf(group) !== -1);
+    this.expenses.filter(expense => expense.group === group);
   }
 
   getExpensesByName(product) {
-    this.expenseService.getExpenses().subscribe(expenses => expenses.indexOf(product) !== -1);
+    this.expenses.filter(expense => expense.product.toLowerCase() === product.toLowerCase());
   }
 
   addExpense() {

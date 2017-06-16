@@ -1,3 +1,6 @@
 .product-list:hover {
   background: #e4e4e4;
 }
+product-list.selected {
+  background: lightblue;
+}

@@ -6,8 +6,8 @@ import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database
 @Injectable()
 export class ExpenseService {
   private expensesUrl = '/product';
-  private expenses: any;
-  constructor(public db: AngularFireDatabase) {
+
+   constructor(public db: AngularFireDatabase) {
   }
 
   getExpenses(): FirebaseListObservable<any> {
