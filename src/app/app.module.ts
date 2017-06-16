@@ -1,5 +1,4 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
 import { ExpensesModule } from "./expenses/expenses.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from './home/home.component';
@@ -25,7 +24,7 @@ import { routes } from './app.route';
   declarations: [
     AppComponent,
     HomeComponent,
-    NotfoundComponent
+    NotfoundComponent,
     LoginComponent,
     EmailComponent,
     SignupComponent,
@@ -34,7 +33,6 @@ import { routes } from './app.route';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
