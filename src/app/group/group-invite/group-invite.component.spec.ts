@@ -1,20 +1,20 @@
 import {async, ComponentFixture, TestBed} from "@angular/core/testing";
 
-import {ExpensesComponent} from "./expenses.component";
+import {GroupInviteComponent} from "./group-invite.component";
 
-describe('ExpensesComponent', () => {
-  let component: ExpensesComponent;
-  let fixture: ComponentFixture<ExpensesComponent>;
+describe('GroupInviteComponent', () => {
+  let component: GroupInviteComponent;
+  let fixture: ComponentFixture<GroupInviteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExpensesComponent ]
+      declarations: [ GroupInviteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExpensesComponent);
+    fixture = TestBed.createComponent(GroupInviteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
