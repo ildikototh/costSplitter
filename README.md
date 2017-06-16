@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Npm installs
 
-Run npm install ngx-qrcode2 --save` to install the QR code module.
+Run npm `install ngx-qrcode2 --save` to install the QR code module.
 
 ## Development server
 
