@@ -16,7 +16,7 @@ export class MemberComponent implements OnInit {
   constructor(public af: AngularFireAuth, public afDB: AngularFireDatabase, private router: Router) {
 
     this.af.authState.subscribe(auth => {
-      console.log()
+      console.log(auth)
       if (auth) {
         this.currentUser = auth;
       }
