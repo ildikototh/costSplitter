@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Expense} from "../../shared/model/expense";
 
 @Component({
   selector: 'app-expenses-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expenses-list.component.css']
 })
 export class ExpensesListComponent implements OnInit {
+
+  @Input() expenses: Expense[];
 
   constructor() { }
 
