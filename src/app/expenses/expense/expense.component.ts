@@ -9,12 +9,20 @@ import {Expense} from "../../shared/model/expense";
 })
 export class ExpenseComponent implements OnInit {
 
+  private isAssigned : boolean = false;
   @Input() expense: Expense;
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  toggleAssignToMe() {
+    this.isAssigned = !this.isAssigned;
+    if (this.isAssigned) {
+
+    }
   }
 
 }
