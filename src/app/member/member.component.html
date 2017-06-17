@@ -11,8 +11,8 @@
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
             {{ currentUser.displayName }}<br>
-            <div *ngIf="currentUser.email">{{ currentUser.email }}</div>
           </div>
+          <div *ngIf="currentUser.email" class="profile-email">{{ currentUser.email }}</div>
           <div class="profile-usertitle-job">
             Developer
           </div>
