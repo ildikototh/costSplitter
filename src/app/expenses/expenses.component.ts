@@ -20,7 +20,7 @@ export class ExpensesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getExpensesByGroup(2);
+    this.getAllExpenses();
   }
 
   getAllExpenses() {
