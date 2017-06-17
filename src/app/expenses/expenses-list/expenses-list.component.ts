@@ -9,23 +9,28 @@ import {Expense} from "../../shared/models/expense";
 export class ExpensesListComponent implements OnInit {
 
   public totalPayable = 0;
-  private selectedItem = { 'price': 0 };
+  private itemForPay = new Expense('', 0);
+  // private itemsForPay = Expense[];
 
   @Input() expenses: Expense[];
   @Input() itemPrice: number;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   itemSelected(price) {
-    this.itemPrice = price;
-    this.calculateTotal();
+
+    this.calculateTotal(price);
   }
 
-  calculateTotal() {
-    this.selectedItem.price = this.itemPrice;
-    this.totalPayable  += this.selectedItem.price;
+  calculateTotal(price) {
+    this.totalPayable  = Math.round((this.totalPayable  += price)  * 100) / 100;
+  }
+
+  paySelected() {
+
   }
 
 }

@@ -1,4 +1,4 @@
-<div class="row product-list" (click) = toggleAssignToMe($event) [ngClass]="{'selected': isAssigned }">
+<div class="row product-list" (click) = "toggleAssignToMe($event)" [ngClass]="{'active': isAssigned}">
   <div class="col-lg-3">{{expense.product}}</div>
   <div class="col-lg-3">{{expense.price}}</div>
   <div class="col-lg-3">{{expense.group}}</div>
