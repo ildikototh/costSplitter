@@ -4,6 +4,15 @@
   text-align: center;
 }
 
+.form-signin-heading {
+  color: #FFFFFF;
+  text-shadow: 2px 2px 4px black;
+}
+
+.form-signin-alter {
+  color: #FFFFFF;
+}
+
 .flex-login {
   min-height: 100vh;
   display: flex;
