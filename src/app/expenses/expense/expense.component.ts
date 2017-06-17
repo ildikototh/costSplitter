@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {Expense} from "../../shared/model/expense";
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {Expense} from '../../shared/models/expense';
 
 
 @Component({
@@ -9,8 +9,10 @@ import {Expense} from "../../shared/model/expense";
 })
 export class ExpenseComponent implements OnInit {
 
-  private isAssigned : boolean = false;
+  public isAssigned = false;
+  public selectedItems= [];
   @Input() expense: Expense;
+  @Output() itemPrice: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {
   }
@@ -20,9 +22,25 @@ export class ExpenseComponent implements OnInit {
 
   toggleAssignToMe() {
     this.isAssigned = !this.isAssigned;
-    if (this.isAssigned) {
 
+    if (this.isAssigned) {
+      this.selectedItems.push(this.expense);
+      this.itemPrice.emit(this.expense.price);
+      console.log(this.selectedItems);
+    } else {
+      this.removeFromList();
+      this.itemPrice.emit(-Math.abs(this.expense.price));
     }
   }
+
+  removeFromList() {
+  const index = this.selectedItems.indexOf(this.expense);
+    if (index > -1) {
+      this.selectedItems.splice(index, 1);
+    }
+    console.log(this.selectedItems);
+}
+
+
 
 }
