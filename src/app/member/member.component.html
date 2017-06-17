@@ -10,15 +10,17 @@
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            {{ currentUser.displayName }}
+            {{ currentUser.displayName }}<br>
+            <div *ngIf="currentUser.email">{{ currentUser.email }}</div>
           </div>
           <div class="profile-usertitle-job">
             Developer
           </div>
         </div>
-        <!-- END SIDEBAR USER TITLE -->
+        <div><!-- END SIDEBAR USER TITLE -->
         <button (click)="logout()" class="btn btn-primary">Logout</button>
-        <!-- END MENU -->
+        </div>
+          <!-- END MENU -->
       </div>
     </div>
     <div class="col-md-9">
