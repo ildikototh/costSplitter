@@ -1,7 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {Expense} from '../shared/models/expense'
+import {Component, OnInit} from "@angular/core";
+import {Expense} from "../shared/models/expense";
 
-import {ExpenseService} from '../shared/services/expense.service';
+import {ExpenseService} from "../shared/services/expense.service";
 
 @Component({
   selector: 'app-expenses',

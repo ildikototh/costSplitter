@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {Expense} from '../models/expense';
-import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import {Injectable} from "@angular/core";
+import {Expense} from "../models/expense";
+import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
 
 
 @Injectable()

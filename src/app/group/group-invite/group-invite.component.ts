@@ -20,7 +20,7 @@ export class GroupInviteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.baseUri = environment.appBaseUri + '/';
+    this.baseUri = environment.appBaseUri + '/groups/';
   }
 
 }

@@ -19,7 +19,7 @@ import {AppComponent} from "./app.component";
 import {GroupService} from "./shared/services/group.service";
 import {GroupModule} from "./group/group.module";
 import {AuthService} from "./shared/services/auth.service";
-import {ExpenseService} from './shared/services/expense.service';
+import {ExpenseService} from "./shared/services/expense.service";
 
 @NgModule({
   declarations: [

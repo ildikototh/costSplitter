@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
-import {Expense} from '../../shared/models/expense';
+import {Expense} from "../../shared/models/expense";
 
 
 @Component({
