@@ -1,9 +1,11 @@
 <div class="form-container" id="toolbar">
 
-  <button (click)="logout()" class="basic-btn">Logout</button>
+
   <div id="page">
-    <h2>Hey you {{ currentUser.displayName }}!</h2>
-    <img src="{{currentUser.photoURL}}" />
+    <h2>Welcome to the member section,
+      <div *ngIf="currentUser.displayName">{{ currentUser.displayName }}</div><div *ngIf="currentUser.email">{{ currentUser.email }}</div>!<img *ngIf="currentUser.photoURL" src="{{currentUser.photoURL}}" width="100px" heigth="100px"/>
+      <button (click)="logout()" class="basic-btn">Logout</button>
+    </h2>
   </div>
 
   <group-overview [currentUser]="currentUser"
