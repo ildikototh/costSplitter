@@ -1,9 +1,6 @@
-<li (click)= toggleAssignToMe()>
-  <div class="card">
+<div class="row product-list" (click) = "toggleAssignToMe($event)" [ngClass]="{'active': isAssigned}">
   <div class="col-lg-3">{{expense.product}}</div>
   <div class="col-lg-3">{{expense.price}}</div>
-  <div class="col-lg-3">{{expense.group}}
-  </div>
+  <div class="col-lg-3">{{expense.group}}</div>
   <div class="col-lg-3">{{expense.user}}</div>
-  </div>
-</li>
+</div>
