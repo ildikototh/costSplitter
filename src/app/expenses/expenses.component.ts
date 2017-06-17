@@ -1,5 +1,9 @@
-import {Component, OnInit} from "@angular/core";
-import {Expense} from "../shared/model/expense";
+import {Component, OnInit} from '@angular/core';
+import {Expense} from '../shared/model/expense'
+
+import {AngularFireDatabase} from 'angularfire2/database';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-expenses',
@@ -10,17 +14,20 @@ export class ExpensesComponent implements OnInit {
 
   public expenses: any;
   expense: Expense = new Expense('Random', 5.4);
-  constructor() { }
+
+  constructor( public afDB: AngularFireDatabase, private router: Router) {
+  }
 
   ngOnInit() {
-      this.expenses = [{'product_name':'Coffee', 'price': 1.1, 'group_id': 1, 'user_id': 2}];
-  }
-  getExpensesByGroup(group_id) {
-    return this.expenses.filter(expense => expense.group_id = group_id);
+    this.expenses = this.afDB.list('/product');
   }
 
-  getExpensesByName(name) {
-    return this.expenses.filter(expense => expense.product_name = name );
+  getExpensesByGroup(group) {
+    this.expenses.subscribe(expenses => expenses.indexOf(group) !== -1);
   }
 
+  getExpensesByName(product) {
+    this.expenses.subscribe(expenses => expenses.indexOf(product) !== -1);
   }
+
+}
