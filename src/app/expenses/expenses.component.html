@@ -1,14 +1,16 @@
 <button (click)="showAddExpense = !showAddExpense" type="button" class="btn btn-primary">Add new product</button>
-<div *ngIf="showAddExpense" class="row container-fluid ">
-  <div class="card">
-    <div class="card-block">
-      <form  #f="ngForm" (submit)="addExpense(f.form.value)" >
-        <input type="text" name="product" [(ngModel)]="expense.product"
-               placeholder="Name">
-        <input type="number" name="price" placeholder="Price" [(ngModel)]="expense.price">
-        <button class="btn btn-primary">Submit</button>
-      </form>
-    </div>
+
+<div *ngIf="showAddExpense"  class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Adding new item into the bill</h3>
+  </div>
+  <div class="panel-body">
+    <form  #f="ngForm" (submit)="addExpense(f.form.value)" >
+      <input type="text" name="product" [(ngModel)]="expense.product"
+             placeholder="Name">
+      <input type="number" name="price" placeholder="Price" [(ngModel)]="expense.price">
+      <button class="btn btn-primary">Submit</button>
+    </form>
   </div>
 </div>
 
