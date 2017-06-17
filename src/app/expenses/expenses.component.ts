@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Expense} from '../shared/models/expense'
 
 import {ExpenseService} from '../shared/services/expense.service';
@@ -11,23 +11,37 @@ import {ExpenseService} from '../shared/services/expense.service';
 export class ExpensesComponent implements OnInit {
 
   public expenses: any;
+  public email: string;
 
   expense: Expense = new Expense('', 0, '', '');
+
 
   constructor(private expenseService: ExpenseService,) {
   }
 
   ngOnInit() {
-    this.expenseService.getExpenses().subscribe(expenses => {
+    this.getExpensesByGroup(2);
+  }
+
+  getAllExpenses() {
+    this.expenseService.getAllExpenses().subscribe(expenses => {
       this.expenses = expenses
-    })
+    });
   }
 
   getExpensesByGroup(group) {
-    this.expenses.filter(expense => expense.group === group);
+    this.expenseService.getExpensesByGroup(group).subscribe(expenses => {
+      this.expenses = expenses
+    });
   }
 
-  getExpensesByName(product) {
+  getExpensesByEmail(email) {
+    this.expenseService.getExpensesByUser(email).subscribe(expenses => {
+      this.expenses = expenses
+    });
+  }
+
+  getExpensesByProductName(product) {
     this.expenses.filter(expense => expense.product.toLowerCase() === product.toLowerCase());
   }
 
