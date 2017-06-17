@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {GroupService} from "../../shared/services/group.service";
 import {AngularFireAuth} from "angularfire2/auth";
+import {User} from "firebase/app";
 
 @Component({
   selector: 'app-group-join-container',
@@ -9,7 +10,7 @@ import {AngularFireAuth} from "angularfire2/auth";
 })
 export class GroupJoinContainerComponent implements OnInit {
 
-  currentUser:any;
+  currentUser:User;
 
   constructor(private groupService:GroupService, public af: AngularFireAuth) {
     this.af.authState.subscribe(auth => {
