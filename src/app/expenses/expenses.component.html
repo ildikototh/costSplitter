@@ -1,4 +1,4 @@
-<button (click)="showAddExpense = !showAddExpense" type="button" class="btn btn-primary">Add product</button>
+<button (click)="showAddExpense = !showAddExpense" type="button" class="btn btn-primary">Add new product</button>
 <div *ngIf="showAddExpense" class="row container-fluid ">
   <div class="card">
     <div class="card-block">
@@ -14,7 +14,7 @@
 
 <div class="expenses-list">
   <div class="container container-fluid">
-    <app-expenses-form (formSubmitted)="getExpensesByName($event)"></app-expenses-form>
+    <app-expenses-form (formSubmitted)="getExpensesByProductName($event)"></app-expenses-form>
     <app-expenses-list [expenses]="expenses" [itemPrice]="itemPrice"></app-expenses-list>
   </div>
 </div>
