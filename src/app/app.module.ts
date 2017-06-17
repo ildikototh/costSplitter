@@ -19,6 +19,7 @@ import {AppComponent} from "./app.component";
 import {GroupService} from "./shared/services/group.service";
 import {GroupModule} from "./group/group.module";
 import {AuthService} from "./shared/services/auth.service";
+import {ExpenseService} from './shared/services/expense.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import {AuthService} from "./shared/services/auth.service";
     LoginComponent,
     EmailComponent,
     SignupComponent,
-    MemberComponent
+    MemberComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,7 @@ import {AuthService} from "./shared/services/auth.service";
     AngularFireDatabaseModule,
     routes
   ],
-  providers: [AuthService, GroupService],
+  providers: [AuthService, GroupService, ExpenseService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

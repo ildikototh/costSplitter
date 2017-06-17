@@ -1,7 +1,10 @@
-<h1>Group invite</h1>
-
-Creating invite for {{group.name}}
-
-<ngx-qrcode [qrc-element-type]="elementType" [qrc-value] = "baseUri + group.$key">
-
-</ngx-qrcode>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Group invite</h3>
+  </div>
+  <div class="panel-body">
+    Creating invite for {{group.name}}
+    <br/>
+    <ngx-qrcode [qrc-element-type]="elementType" [qrc-value] = "baseUri + group.$key"></ngx-qrcode>
+  </div>
+</div>

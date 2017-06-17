@@ -1,7 +1,22 @@
-<div class="row"><button class="btn-primary" >Add product</button></div>
+<button (click)="showAddExpense = !showAddExpense" type="button" class="btn btn-primary">Add new product</button>
+
+<div *ngIf="showAddExpense"  class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Adding new item into the bill</h3>
+  </div>
+  <div class="panel-body">
+    <form  #f="ngForm" (submit)="addExpense(f.form.value)" >
+      <input type="text" name="product" [(ngModel)]="expense.product"
+             placeholder="Name">
+      <input type="number" name="price" placeholder="Price" [(ngModel)]="expense.price">
+      <button class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+
 <div class="expenses-list">
   <div class="container container-fluid">
-    <app-expenses-form (formSubmitted)="getExpensesByName($event)"></app-expenses-form>
-    <app-expenses-list [expenses]="expenses | async" ></app-expenses-list>
+    <app-expenses-form (formSubmitted)="getExpensesByProductName($event)"></app-expenses-form>
+    <app-expenses-list [expenses]="expenses" [itemPrice]="itemPrice"></app-expenses-list>
   </div>
 </div>

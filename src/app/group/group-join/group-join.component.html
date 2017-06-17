@@ -1,8 +1,10 @@
-
-<div *ngIf="group">
-<h1>Group join</h1>
-You were invited to join group <strong>{{group.name}}</strong>
-<br/>
-<button (click)="onJoinButtonClicked()">JOIN</button>
-
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Group join</h3>
+  </div>
+  <div class="panel-body">
+    You were invited to join group <strong>{{group.name}}</strong>
+    <br/>
+    <button class="btn btn-primary" onclick="onJoinButtonClicked()">JOIN</button>
+  </div>
 </div>

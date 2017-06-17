@@ -1,9 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Expense} from '../shared/model/expense'
+import {Component, OnInit, Input} from '@angular/core';
+import {Expense} from '../shared/models/expense'
 
-import {AngularFireDatabase} from 'angularfire2/database';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {Router} from '@angular/router';
+import {ExpenseService} from '../shared/services/expense.service';
 
 @Component({
   selector: 'app-expenses',
@@ -13,21 +11,50 @@ import {Router} from '@angular/router';
 export class ExpensesComponent implements OnInit {
 
   public expenses: any;
-  expense: Expense = new Expense('Random', 5.4);
+  public email: string;
 
-  constructor( public afDB: AngularFireDatabase, private router: Router) {
+  expense: Expense = new Expense('', 0, '', '');
+
+
+  constructor(private expenseService: ExpenseService,) {
   }
 
   ngOnInit() {
-    this.expenses = this.afDB.list('/product');
+    this.getExpensesByGroup(2);
+  }
+
+  getAllExpenses() {
+    this.expenseService.getAllExpenses().subscribe(expenses => {
+      this.expenses = expenses
+    });
   }
 
   getExpensesByGroup(group) {
-    this.expenses.subscribe(expenses => expenses.indexOf(group) !== -1);
+    this.expenseService.getExpensesByGroup(group).subscribe(expenses => {
+      this.expenses = expenses
+    });
   }
 
-  getExpensesByName(product) {
-    this.expenses.subscribe(expenses => expenses.indexOf(product) !== -1);
+  getExpensesByEmail(email) {
+    this.expenseService.getExpensesByUser(email).subscribe(expenses => {
+      this.expenses = expenses
+    });
   }
 
+  getExpensesByProductName(product) {
+    this.expenses.filter(expense => expense.product.toLowerCase() === product.toLowerCase());
+  }
+
+  addExpense() {
+    if (this.expense.product === '') {
+      return;
+    }
+    this.expenseService.addExpense(this.expense);
+    this.setDefaultValues();
+  }
+
+  setDefaultValues() {
+    this.expense.product = '';
+    this.expense.price = 0;
+  }
 }
