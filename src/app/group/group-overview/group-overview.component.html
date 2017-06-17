@@ -1,7 +1,7 @@
 <h1>Group overview</h1>
 
 <ul>
-  <li *ngFor="let group of groups">
-    {{group.id}}: {{group.name}} - <button>Details</button>
+  <li *ngFor="let group of groups | async">
+    {{group.name}} - <button (click)="showDetails(group.$key)">Details</button>
   </li>
 </ul>

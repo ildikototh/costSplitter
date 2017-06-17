@@ -1,6 +1,8 @@
 export class Group {
 
-  constructor(public id:string, public name:string) {
+  public $key:string;
+
+  constructor(public name:string, public ownerId:string, public userIds:string[]) {
 
   }
 
