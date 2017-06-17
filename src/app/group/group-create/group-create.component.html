@@ -1,15 +1,21 @@
-<h1>Create new group</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Create new group</h3>
+  </div>
+  <div class="panel-body">
 
-<form (ngSubmit)="onSubmit()">
-  <p>
-    <label for="name">Name:</label>
-    <input
-      class="form-control"
-      placeholder="Enter group name"
-      type="text"
-      [(ngModel)]="name"
-      name="name"
-      required>
-  </p>
-  <button type="submit">Create</button>
-</form>
+    <form (ngSubmit)="onSubmit()">
+      <p>
+        <label for="name">Name:</label>
+        <input
+          class="form-control"
+          placeholder="Enter group name"
+          type="text"
+          [(ngModel)]="name"
+          name="name"
+          required>
+      </p>
+      <button class="btn-primary btn" type="submit">Create</button>
+    </form>
+  </div>
+</div>
