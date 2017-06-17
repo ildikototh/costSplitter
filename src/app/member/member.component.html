@@ -6,4 +6,22 @@
     <img src="{{currentUser.photoURL}}" />
   </div>
 
+  <group-overview [currentUser]="currentUser"
+                  (groupSelected)="onGroupSelected($event)">
+  </group-overview>
+
+  <group-create (groupCreated)="createGroup($event)"></group-create>
+
+  <group-details [group]="currentGroup">
+
+  </group-details>
+
+  <group-invite [group]="currentGroup">
+
+  </group-invite>
+
+  <group-join (userJoined)="addUserToGroup($event)">
+
+  </group-join>
+
 </div>

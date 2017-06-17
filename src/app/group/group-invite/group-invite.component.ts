@@ -19,7 +19,7 @@ export class GroupInviteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.value = `${environment.appBaseUri}/${this.group.id}`;
+    this.value = `${environment.appBaseUri}/${this.group.name}`;
   }
 
 }

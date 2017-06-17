@@ -1,23 +1,23 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
 import {Group} from "../models/group";
+import {AngularFireDatabase, FirebaseListObservable} from "angularfire2/database";
 
 @Injectable()
 export class GroupService {
 
-  constructor(private http: Http) { }
+  groups: FirebaseListObservable<any>;
 
-  getGroupsByUserId(userId: string) {
-    let groups = [new Group('123456', 'My first group'), new Group('654321', 'Second group')];
-    return groups;
-  }
-
-  getGroup(groupId: string) {
-    return this.getGroupsByUserId('')[0];
+  constructor(private database: AngularFireDatabase) {
+    this.groups = this.database.list('/groups');
   }
 
   createGroup(group: Group) {
+    if (group == null) return;
+    this.groups.push(group);
+  }
 
+  find(groupId:string) {
+    return this.database.object('/groups/' + groupId);
   }
 
 }

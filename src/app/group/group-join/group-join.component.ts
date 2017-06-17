@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {GroupService} from "../../shared/services/group.service";
+import {Component, EventEmitter, Output} from "@angular/core";
 import {Group} from "../../shared/models/group";
 
 @Component({
@@ -7,15 +6,15 @@ import {Group} from "../../shared/models/group";
   templateUrl: './group-join.component.html',
   styleUrls: ['./group-join.component.css']
 })
-export class GroupJoinComponent implements OnInit {
+export class GroupJoinComponent {
 
   group:Group;
-  @Input() groupId:string = '12345';
+  @Output() userJoined = new EventEmitter();
 
-  constructor(private groupService:GroupService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.group = this.groupService.getGroup(this.groupId);
+  onJoinButtonClicked() {
+    this.userJoined.emit({groupId: this.group.name});
   }
 
 }
