@@ -12,14 +12,15 @@ export class GroupInviteComponent implements OnInit {
   @Input() group: Group;
 
   elementType : 'url' | 'canvas' | 'img' = 'url';
-  value : string = environment.appBaseUri;
+  value : string = '';
+  baseUri : string = '';
 
   constructor() {
 
   }
 
-  ngOnInit() {
-    this.value = `${environment.appBaseUri}/${this.group.name}`;
+  ngOnInit(): void {
+    this.baseUri = environment.appBaseUri + '/';
   }
 
 }

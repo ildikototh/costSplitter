@@ -7,6 +7,7 @@ import {NgxQRCodeComponent} from "ngx-qrcode2";
 import {GroupJoinComponent} from "./group-join/group-join.component";
 import {GroupCreateComponent} from "./group-create/group-create.component";
 import {FormsModule} from "@angular/forms";
+import {GroupJoinContainerComponent} from "./group-join-container/group-join-container.component";
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import {FormsModule} from "@angular/forms";
     GroupJoinComponent,
     NgxQRCodeComponent,
     GroupCreateComponent,
+    GroupJoinContainerComponent,
   ],
   exports: [
     GroupOverviewComponent,
@@ -28,7 +30,8 @@ import {FormsModule} from "@angular/forms";
     GroupInviteComponent,
     GroupJoinComponent,
     GroupCreateComponent,
-    NgxQRCodeComponent
+    NgxQRCodeComponent,
+    GroupJoinContainerComponent
   ]
 })
 export class GroupModule { }

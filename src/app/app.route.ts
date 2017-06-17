@@ -7,6 +7,7 @@ import {SignupComponent} from "./signup/signup.component";
 import {EmailComponent} from "./email/email.component";
 import {HomeComponent} from "./home/home.component";
 import {NotfoundComponent} from "./notfound/notfound.component";
+import {GroupJoinContainerComponent} from "./group/group-join-container/group-join-container.component";
 
 export const router: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,6 +16,7 @@ export const router: Routes = [
   { path: 'login-email', component: EmailComponent },
   { path: 'members', component: MemberComponent, canActivate: [AuthService] },
   { path: 'home', component: HomeComponent},
+  { path: 'groups/:id', component: GroupJoinContainerComponent},
   { path: 'expenses', canActivate: [AuthService], loadChildren: './expenses/expenses.module.ts#ExpensesModule' },
   { path: '**', component: NotfoundComponent}
 

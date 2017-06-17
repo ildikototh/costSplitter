@@ -35,11 +35,6 @@ export class MemberComponent {
     this.groupService.createGroup(new Group(event.name, this.currentUser.uid, [this.currentUser.uid]));
   }
 
-  addUserToGroup(event: any) {
-    this.currentGroup.userIds[this.currentGroup.userIds.length] = this.currentUser.uid;
-    this.groupService.groups.update(this.currentGroup.$key, this.currentGroup);
-  }
-
   onGroupSelected(event: any) {
     this.groupService.find(event.groupId).subscribe(group => {
       this.currentGroup = group;
